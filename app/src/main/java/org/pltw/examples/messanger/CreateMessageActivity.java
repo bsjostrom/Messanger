@@ -22,7 +22,9 @@ public class CreateMessageActivity extends AppCompatActivity {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String messageText = messageTextView.getText().toString();
                 Intent intent = new Intent(view.getContext(), RecieveMessageActivity.class);
+                intent.putExtra(RecieveMessageActivity.EXTRA_MESSAGE, messageTextView);
                 startActivity(intent);
 
             }
